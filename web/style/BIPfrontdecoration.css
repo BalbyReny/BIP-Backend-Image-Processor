@@ -1,0 +1,263 @@
+/* 
+    Created on : 05/06/2018, 10:51:48 PM
+    Author     : @BalbyReny
+    Wow I love my job <3
+*/
+
+html {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    margin: 15px;
+    padding: 10px;
+    background: rgb(254,204,177); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,204,177,1) 0%, rgba(241,116,50,1) 50%, rgba(234,85,7,1) 51%, rgba(251,149,94,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+    border-radius: 50px;
+    color: #5b00ca;
+    font-family: 'Carter One', cursive;
+    text-align: center;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    box-shadow: #663d08 0.1em 0.1em 0.2em;
+    transition: 0.4s;
+}
+
+header h1 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 80px;
+    text-decoration: underline;
+}
+
+header h2{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 55px;
+    text-decoration: none;
+}
+
+header img {
+    max-height: 200px;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    float: left;
+    transition: 0.4s;
+}
+
+body {
+    background-color: #F2E4C8;
+    color: black;
+    font-family: 'Lato Light', 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.toggle-info {
+    margin: 15px;
+    padding: 10px;
+    background-color: #d9c5b6;
+    border-radius: 10px;
+    box-shadow: #663d08 0.1em 0.1em 0.2em;
+}
+
+.accordion {
+    background-color: #d9c5b6;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #d9c7f3; 
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode for (+) */
+    font-size: 18px;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\02796"; /* Unicode for (-) */
+}
+
+.panel {
+    padding: 0 15px;
+    display: none;
+    background-color: #eee2d2;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.pic-upload {
+    margin: 30px;
+    padding: 10px;
+    background-color: #ffd3af;
+    color: #663d08;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: #663d08 0.1em 0.1em 0.2em;
+    transition: 0.4s;
+}
+
+.pic-upload h3 {
+    margin: 0;
+    padding: 5px;
+    color: #5b00ca;
+    font-family: 'Carter One', cursive;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: black 0.05em 0.05em 0.1em;
+}
+
+#fileInput, #uploadButton, #resetButton {
+    margin: auto;
+    padding: 15px;
+    background: rgb(254,204,177); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,204,177,1) 0%, rgba(241,116,50,1) 50%, rgba(234,85,7,1) 51%, rgba(251,149,94,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+    border-radius: 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+} 
+
+#progressBar {
+    width: 100%;
+    height: 20px;
+    border: none;
+    color: #d9c7f3;
+}
+
+.filtername {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    background-color: #d9c7f3;
+    color: #663d08;
+    font-family: 'Carter One', cursive;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: black 0.05em 0.05em 0.1em;
+    border-radius: 10px;
+    box-shadow: #663d08 0.1em 0.1em 0.2em;
+    transition: 0.4s;
+}
+
+.pic-container {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #663d08 0.1em 0.1em 0.2em;
+}
+
+
+/* Semi-responsive attempt ? */
+@media only screen and (max-width: 1000px) {
+    header {
+        margin: 8px;
+        padding: 5px;
+        border-radius: 25px;
+        text-shadow: black 0.05em 0.05em 0.1em;
+        box-shadow: #663d08 0.05em 0.05em 0.1em;
+    }
+    
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 25px;
+    }
+    
+    header img {
+        max-height: 100px;
+        margin-left: 10px;
+        margin-top: 5px;
+        display: inline-block;
+        float: left;
+        transition: 0.4s;
+    }
+    
+    .toggle-info {
+        margin: 8px;
+        padding: 5px;
+        background-color: #d9c5b6;
+        border-radius: 10px;
+        box-shadow: #663d08 0.05em 0.05em 0.1em;
+    }
+    
+    .accordion, .panel {
+        font-size: 14px;
+    }
+    
+    .accordion:after {
+        font-size: 13px;
+    }
+    
+    .filtername {
+        font-size: 20px;
+        text-shadow: black 0.025em 0.025em 0.05em;
+        box-shadow: #663d08 0.05em 0.05em 0.1em;
+    }
+    
+    .pic-container {
+        margin: 8px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: #663d08 0.05em 0.05em 0.1em;
+    }
+    
+    .pic-upload {
+        margin: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: #663d08 0.05em 0.05em 0.1em;
+    }
+    
+    .pic-upload h3 {
+        text-shadow: black 0.025em 0.025em 0.05em;
+        font-size: 20px;
+        transition: 0.4s;
+    }
+    
+    #fileInput, #uploadButton, #resetButton {
+        margin: auto;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+}
+
+/* >implying that someone actually wants to upload a pic with this window resolution (this isn't a 'mobile web app' [yet] sorry) */
+@media only screen and (max-width: 443px) {
+    
+    header img {
+        max-height: 80px;
+        margin-top: 30px;
+        transition: 0.4s;
+    }
+    
+    #fileInput {
+        width: 247px;
+    }
+}    

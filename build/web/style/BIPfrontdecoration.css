@@ -1,4 +1,4 @@
-/* 
+/*
     Created on : 05/06/2018, 10:51:48 PM
     Author     : @BalbyReny
     Wow I love my job <3
@@ -81,7 +81,7 @@ body {
 }
 
 .active, .accordion:hover {
-    background-color: #d9c7f3; 
+    background-color: #d9c7f3;
 }
 
 .accordion:after {
@@ -137,7 +137,7 @@ body {
     font-size: 18px;
     text-align: center;
     cursor: pointer;
-} 
+}
 
 #progressBar {
     width: 100%;
@@ -180,7 +180,7 @@ body {
         text-shadow: black 0.05em 0.05em 0.1em;
         box-shadow: #663d08 0.05em 0.05em 0.1em;
     }
-    
+
     header h1 {
         font-size: 40px;
     }
@@ -188,7 +188,7 @@ body {
     header h2 {
         font-size: 25px;
     }
-    
+
     header img {
         max-height: 100px;
         margin-left: 10px;
@@ -197,7 +197,7 @@ body {
         float: left;
         transition: 0.4s;
     }
-    
+
     .toggle-info {
         margin: 8px;
         padding: 5px;
@@ -205,41 +205,41 @@ body {
         border-radius: 10px;
         box-shadow: #663d08 0.05em 0.05em 0.1em;
     }
-    
+
     .accordion, .panel {
         font-size: 14px;
     }
-    
+
     .accordion:after {
         font-size: 13px;
     }
-    
+
     .filtername {
         font-size: 20px;
         text-shadow: black 0.025em 0.025em 0.05em;
         box-shadow: #663d08 0.05em 0.05em 0.1em;
     }
-    
+
     .pic-container {
         margin: 8px;
         padding: 5px;
         border-radius: 10px;
         box-shadow: #663d08 0.05em 0.05em 0.1em;
     }
-    
+
     .pic-upload {
         margin: 20px;
         padding: 5px;
         border-radius: 10px;
         box-shadow: #663d08 0.05em 0.05em 0.1em;
     }
-    
+
     .pic-upload h3 {
         text-shadow: black 0.025em 0.025em 0.05em;
         font-size: 20px;
         transition: 0.4s;
     }
-    
+
     #fileInput, #uploadButton, #resetButton {
         margin: auto;
         padding: 10px;
@@ -250,14 +250,14 @@ body {
 
 /* >implying that someone actually wants to upload a pic with this window resolution (this isn't a 'mobile web app' [yet] sorry) */
 @media only screen and (max-width: 443px) {
-    
+
     header img {
         max-height: 80px;
         margin-top: 30px;
         transition: 0.4s;
     }
-    
+
     #fileInput {
         width: 247px;
     }
-}    
+}

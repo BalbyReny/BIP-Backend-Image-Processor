@@ -1,5 +1,6 @@
 package ImageProcessor;
 
+import Filters.SepiaEffect;
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -17,11 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author @BalbyReny
+ *
+ * @author Luis
  */
-@WebServlet(name = "FileUpload", urlPatterns = {"/UploadToSeeTheMagic"})
+@WebServlet(name = "FileSepiapload", urlPatterns = {"/UploadToSeeTheSepiaMagic"})
 @MultipartConfig
-public class FileUpload extends HttpServlet {
+
+public class FileSepiaUpload extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,18 +34,13 @@ public class FileUpload extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         /**
          * Upload the image file and pass it via response to the corresponding
          * section
          */
-        Runnable myThread = new RunnableImpl(request, response);
-        myThread.run();
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
+        Runnable myThread5 = new RunnableImpl(request, response);
+        myThread5.run();
     }
 
     private static class RunnableImpl implements Runnable {
@@ -59,20 +57,22 @@ public class FileUpload extends HttpServlet {
         public void run() {
             try {
                 InputStream in = request.getInputStream();
-                BufferedImage bi = ImageIO.read(in);
-
-                BufferedImage thumb = new BufferedImage(bi.getWidth(), bi.getHeight(), bi.getType());
+                SepiaEffect sepiaFilter = new SepiaEffect();
+                sepiaFilter.setMyImage(ImageIO.read(in));
+                sepiaFilter.ApplyFilter();
+                BufferedImage thumb = new BufferedImage(sepiaFilter.getMyImage().getWidth(), sepiaFilter.getMyImage().getHeight(),
+                        sepiaFilter.getMyImage().getType());
                 Graphics2D g = thumb.createGraphics();
                 g.setComposite(AlphaComposite.Src);
                 g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g.drawImage(bi, 0, 0, bi.getWidth(), bi.getHeight(), null);
+                g.drawImage(sepiaFilter.getMyImage(), 0, 0, sepiaFilter.getMyImage().getWidth(), sepiaFilter.getMyImage().getHeight(), null);
 
                 response.setContentType("image/jpg");
                 ImageIO.write(thumb, "jpg", response.getOutputStream());
             } catch (IOException ex) {
-                Logger.getLogger(FileUpload.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(FileSepiaUpload.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
